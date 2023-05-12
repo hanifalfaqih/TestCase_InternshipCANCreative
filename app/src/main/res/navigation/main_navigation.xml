@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation.xml"
+    app:startDestination="@id/listGameFragment">
+
+    <fragment
+        android:id="@+id/listGameFragment"
+        android:name="id.allana.gamesapp.ui.listgame.ListGameFragment"
+        android:label="List Game"
+        tools:layout="@layout/fragment_list_game">
+        <action
+            android:id="@+id/action_listGameFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
+        <action
+            android:id="@+id/action_listGameFragment_to_favoriteGameFragment"
+            app:destination="@id/favoriteGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteGameFragment"
+        android:name="id.allana.gamesapp.ui.favoritegame.FavoriteGameFragment"
+        android:label="Favorite Game"
+        tools:layout="@layout/fragment_favorite_game" >
+        <action
+            android:id="@+id/action_favoriteGameFragment_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailGameFragment"
+        android:name="id.allana.gamesapp.ui.detailgame.DetailGameFragment"
+        android:label="Detail Game"
+        tools:layout="@layout/fragment_detail_game">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
